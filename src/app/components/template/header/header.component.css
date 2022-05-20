@@ -1,9 +1,15 @@
-
 .header
 {
     background-color: black;
     justify-content: center;
     height: 10%;
+}
+
+.button
+{
+    left:2%;
+    position: absolute;
+    height: 5%;
 }
 
 img
@@ -21,7 +27,4 @@ h1
 span
 {
     display: flex;
-    align-items: center;
-
 }
-
