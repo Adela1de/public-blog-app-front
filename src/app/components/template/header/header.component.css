@@ -1,0 +1,27 @@
+
+.header
+{
+    background-color: black;
+    justify-content: center;
+    height: 10%;
+}
+
+img
+{
+    height: 6rem;
+}
+
+h1
+{
+    color:white;
+    padding-left: .5rem;
+    font-size: 1.5rem;
+}
+
+span
+{
+    display: flex;
+    align-items: center;
+
+}
+
