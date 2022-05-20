@@ -28,3 +28,9 @@ span
 {
     display: flex;
 }
+
+button {
+    position: absolute;
+    height: 5%;
+    left: 5%;
+  }
