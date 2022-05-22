@@ -14,6 +14,10 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { HomeComponent } from './components/views/home/home.component';
 import {MatCardModule} from '@angular/material/card';
+import { UserLoginComponent } from './components/views/user/user-login/user-login.component';
+import {FormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,8 @@ import {MatCardModule} from '@angular/material/card';
     HeaderComponent,
     FooterComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,10 @@ import {MatCardModule} from '@angular/material/card';
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

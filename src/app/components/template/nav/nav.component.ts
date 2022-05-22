@@ -10,7 +10,6 @@ export class NavComponent implements OnInit {
 
   button_name:string = "arrow_forward"
   rotate = false;
-  displayHome = false;
 
   constructor(private router: Router) { }
 
@@ -26,8 +25,9 @@ export class NavComponent implements OnInit {
     this.rotate = !this.rotate;
   }
 
-  navigateToHome():void
+  navigateToLogin():void
   {
-    this.router.navigate(['']);
+    this.router.navigate(['/login']);
   }
+
 }

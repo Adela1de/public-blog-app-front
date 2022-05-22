@@ -1,0 +1,17 @@
+<form>
+    <h1>Log in</h1>
+    <mat-form-field class="form">
+        <mat-label>E-mail</mat-label>
+        <input matInput type="text" name="E-mail" placeholder="Ex. teste@gmail.com">  
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Password</mat-label>
+        <input matInput type="text" name="Password" placeholder="Ex. 123456789">  
+    </mat-form-field>
+
+    <div class="buttons">
+        <button class="mat-elevation-z8" mat-stroked-button color="basic"> CONFIRM </button>
+        <button class="mat-elevation-z8" mat-stroked-button color="basic"> REGISTER </button>
+        <button (click)="cancelLogin()"class="mat-elevation-z8" mat-stroked-button color="basic"> CANCEL </button>
+    </div>
+</form>
