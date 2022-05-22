@@ -33,8 +33,12 @@ export class UserLoginComponent implements OnInit {
 
   userLogin(email: String, password: String):void
   {
-    this.userService.login(email, password);
-    this.router.navigate(['']);
+    if(!this.userService.checkIfLogged()) { this.userService.login(email, password); }
+    else{
+      this.userService.message("You area already logged in! ");
+      this.router.navigate(['']);
+    }
+    
   }
 
 }

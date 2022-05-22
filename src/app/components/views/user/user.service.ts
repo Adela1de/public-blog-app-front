@@ -20,29 +20,36 @@ export class UserService {
     password: ''
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
   login(email: String, password: String):void
   {
     const url = `${this.baseUrl}users/login`
     this.http.post<user>(url, {email, password}).subscribe((answer) =>{
       this.user = answer;
+      console.log(this.user)
     });
   }
 
   userCreate(userName: String, email: String, password: String):Observable<user>
   {
     const url = `${this.baseUrl}users/register`
-    console.log(userName)
-    console.log(email)
-    console.log(password)
     return this.http.post<user>(url, {userName, email, password});
   }
 
   checkIfLogged():boolean
   {
-    if(this.user.id == null) return false;
-    return true;
+    if(this.user.id == ""){ return false; }
+    else { return true; }
+  }
+
+  message(str: string):void
+  {
+    this._snack.open(`${str}`, "OK", {
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+      duration: 3000
+    })
   }
 
 }

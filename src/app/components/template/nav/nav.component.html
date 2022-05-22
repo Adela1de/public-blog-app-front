@@ -2,7 +2,7 @@
 
     <mat-drawer #drawer class="example-sidenav" mode="side">
         <mat-nav-list class="list">
-            <a mat-list-item  routerLink="/login">
+            <a mat-list-item  (click)="navigateToLogin()">
                 <i class="material-icons">play_circle_filled</i> Log in
             </a>
             <a mat-list-item routerLink="">
