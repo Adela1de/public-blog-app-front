@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -9,8 +10,9 @@ export class NavComponent implements OnInit {
 
   button_name:string = "arrow_forward"
   rotate = false;
+  displayHome = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   showDrawer = false;
 
@@ -22,5 +24,10 @@ export class NavComponent implements OnInit {
     if(!this.rotate) this.button_name = "arrow_back";
     else this.button_name = "arrow_forward"
     this.rotate = !this.rotate;
+  }
+
+  navigateToHome():void
+  {
+    this.router.navigate(['']);
   }
 }

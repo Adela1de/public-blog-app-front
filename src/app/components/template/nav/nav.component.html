@@ -1,10 +1,11 @@
 <mat-drawer-container class="example-container" autosize>
+
     <mat-drawer #drawer class="example-sidenav" mode="side">
         <mat-nav-list class="list">
             <a mat-list-item>
                 <i class="material-icons">play_circle_filled</i> Log in
             </a>
-            <a mat-list-item>
+            <a mat-list-item routerLink="">
                 <i class="material-icons">home</i> Home
             </a>
             <a mat-list-item>
@@ -26,8 +27,12 @@
                 <i class="material-icons">favorite</i> My Favorites
             </a>
         </mat-nav-list>
+
     </mat-drawer>
     <button (click)="drawer.toggle()" (click)="onClick()" mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
         <mat-icon>{{ button_name }}</mat-icon>
     </button> 
+
+    <router-outlet></router-outlet>
+    
 </mat-drawer-container>
