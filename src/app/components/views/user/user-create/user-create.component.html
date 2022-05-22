@@ -1,21 +1,21 @@
 <form>
-    <h1>Log in</h1>
+    <h1>Registration</h1>
 
     <mat-form-field class="form">
         <mat-label>User name</mat-label>
-        <input matInput type="text" name="User name" placeholder="Ex. Adelaide">  
+        <input matInput [(ngModel)]="user.userName" type="text" name="User name" placeholder="Ex. Adelaide">  
     </mat-form-field>
     <mat-form-field class="form">
         <mat-label>E-mail</mat-label>
-        <input matInput type="text" name="E-mail" placeholder="Ex. teste@gmail.com">  
+        <input matInput [(ngModel)]="user.email" type="text" name="E-mail" placeholder="Ex. teste@gmail.com">  
     </mat-form-field>
     <mat-form-field class="form">
         <mat-label>Password</mat-label>
-        <input matInput type="text" name="Password" placeholder="Ex. 123456789">  
+        <input matInput [(ngModel)]="user.password" type="text" name="Password" placeholder="Ex. 123456789">  
     </mat-form-field>
 
     <div class="buttons">
-        <button class="mat-elevation-z8" mat-stroked-button color="basic"> CONFIRM </button>
+        <button (click)="userRegister(user.userName!, user.email!, user.password!)" class="mat-elevation-z8" mat-stroked-button color="basic"> CONFIRM </button>
         <button (click)="cancelRegistration()"class="mat-elevation-z8" mat-stroked-button color="basic"> CANCEL </button>
     </div>
 </form>

@@ -34,6 +34,7 @@ export class UserLoginComponent implements OnInit {
   userLogin(email: String, password: String):void
   {
     this.userService.login(email, password);
+    this.router.navigate(['']);
   }
 
 }
