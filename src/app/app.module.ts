@@ -18,6 +18,7 @@ import { UserLoginComponent } from './components/views/user/user-login/user-logi
 import {FormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { UserCreateComponent } from './components/views/user/user-create/user-create.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    UserCreateComponent
   ],
   imports: [
     BrowserModule,

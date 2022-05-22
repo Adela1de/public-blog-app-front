@@ -18,4 +18,9 @@ export class UserLoginComponent implements OnInit {
     this.router.navigate(['']);
   }
 
+  userRegisterNavigate():void
+  {
+    this.router.navigate(['/register']);
+  }
+
 }
