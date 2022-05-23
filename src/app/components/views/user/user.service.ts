@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { article } from '../article/article-read-model.model';
 import { user } from './user.model';
 
 @Injectable({
@@ -36,6 +37,7 @@ export class UserService {
     const url = `${this.baseUrl}users/register`
     return this.http.post<user>(url, {userName, email, password});
   }
+  
 
   checkIfLogged():boolean
   {
@@ -43,6 +45,11 @@ export class UserService {
     else { return true; }
   }
 
+  findFavorites():Observable<article[]>
+  {
+    const url = `${this.baseUrl}users/favorites/${this.user.id}`
+    return this.http.get<article[]>(url);
+  }
   message(str: string):void
   {
     this._snack.open(`${str}`, "OK", {

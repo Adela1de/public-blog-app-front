@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ArticleReadComponent } from './components/views/article/article-read/article-read.component';
 import {MatTableModule} from '@angular/material/table';
+import { UserFavoriteComponent } from './components/views/user/user-favorite/user-favorite.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {MatTableModule} from '@angular/material/table';
     HomeComponent,
     UserLoginComponent,
     UserCreateComponent,
-    ArticleReadComponent
+    ArticleReadComponent,
+    UserFavoriteComponent
   ],
   imports: [
     BrowserModule,
