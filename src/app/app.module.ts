@@ -24,6 +24,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ArticleReadComponent } from './components/views/article/article-read/article-read.component';
 import {MatTableModule} from '@angular/material/table';
 import { UserFavoriteComponent } from './components/views/user/user-favorite/user-favorite.component';
+import { ArticleFindByUsernameComponent } from './components/views/article/article-find-by-username/article-find-by-username.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { UserFavoriteComponent } from './components/views/user/user-favorite/use
     UserLoginComponent,
     UserCreateComponent,
     ArticleReadComponent,
-    UserFavoriteComponent
+    UserFavoriteComponent,
+    ArticleFindByUsernameComponent
   ],
   imports: [
     BrowserModule,

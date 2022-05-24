@@ -1,6 +1,13 @@
 <div class="content">
     <div class="title">
         <h1>All Articles</h1>
+
+        <mat-form-field class="searchbar">
+            <mat-icon matPrefix>search</mat-icon>
+            <input class="form-control mr-sm-2" matInput type="search" placeholder="search here" class="search-input" id="username" name="username" aria-label="Search"
+            (keyup.enter)="findByAuthor()" [(ngModel)]="username">
+        </mat-form-field>
+
     </div>
         <div class="mat-elevation-z8 content-table">
             <table class="table" mat-table [dataSource]="articles">

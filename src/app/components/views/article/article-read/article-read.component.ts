@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { article } from '../article-read-model.model';
 import { ArticleService } from '../article.service';
 
@@ -12,8 +13,9 @@ export class ArticleReadComponent implements OnInit {
   displayedColumns: string[] = ['title', 'user', 'categories'];
   
   articles: article[] = []
+  username: String = "";
 
-  constructor(private articleService: ArticleService) { }
+  constructor(private articleService: ArticleService, private router: Router) { }
 
   ngOnInit(): void {
     this.findAll();
@@ -25,6 +27,12 @@ export class ArticleReadComponent implements OnInit {
       this.articles = answer;
       console.log(this.articles)
     })
+  }
+
+  findByAuthor():void
+  {
+    console.log(this.username)
+    this.router.navigate(['articles/'+this.username])
   }
 
 }
