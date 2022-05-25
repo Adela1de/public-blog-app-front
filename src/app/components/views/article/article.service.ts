@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { articleById } from './article-read-by-id-model';
 import { article } from './article-read-model.model';
+import { comment } from './comments.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +19,16 @@ export class ArticleService {
     return this.http.get<article[]>(url);
   }
 
-  findById(id: String):Observable<articleById>
+  findById(id: String):Observable<article>
   {
-    const url = `${this.baseUrl}artiles/${id}`
-    return this.http.get<articleById>(url)
+    const url = `${this.baseUrl}articles/${id}`
+    return this.http.get<article>(url)
+  }
+
+  findCommentsById(id: String):Observable<comment>
+  {
+    const url = `${this.baseUrl}articles/comments/${id}`
+    return this.http.get<comment>(url);
   }
 
   findByUsername(username: String):Observable<article[]>

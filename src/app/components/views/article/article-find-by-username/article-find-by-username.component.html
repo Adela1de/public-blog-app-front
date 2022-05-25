@@ -32,6 +32,15 @@
             <th mat-header-cell *matHeaderCellDef> Categories </th>
             <td mat-cell *matCellDef="let element"> {{element.categories}} </td>
             </ng-container>
+
+            <ng-container matColumnDef="actions">
+                <th class="mat-header" mat-header-cell *matHeaderCellDef> Actions </th>
+                <td mat-cell *matCellDef="let element">
+                
+                <a class="view" routerLink="/articles/article/{{ element.id }}">
+                    <i class="material-icons">remove_red_eye</i>
+                </a>
+            </ng-container>
         
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

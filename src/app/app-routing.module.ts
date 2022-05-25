@@ -36,6 +36,10 @@ const routes: Routes = [
   {
     path: 'articles/article/:id',
     component: ArticleGetComponent
+  },
+  {
+    path: ':username/:id',
+    component: ArticleGetComponent
   }
 
 ];

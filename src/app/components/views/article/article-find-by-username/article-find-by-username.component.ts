@@ -11,7 +11,7 @@ import {Location} from '@angular/common';
 })
 export class ArticleFindByUsernameComponent implements OnInit {
 
-  displayedColumns: string[] = ['title', 'user', 'categories'];
+  displayedColumns: string[] = ['title', 'user', 'categories', 'actions'];
   articles: article[] = [];
   username: String = "";
 
@@ -31,6 +31,11 @@ export class ArticleFindByUsernameComponent implements OnInit {
       this.location.replaceState("/articles/"+this.username);
       this.articles = answer;
     })
+  }
+
+  navigateToArticle(id: String):void
+  {
+    this.router.navigate(['/articles/'+id])
   }
 
   cancel():void

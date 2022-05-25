@@ -2,6 +2,7 @@ export interface article
 {
     id?: String,
     title: String,
-    userName: String,
-    categories: String[],
+    text?: String,
+    userName?: String,
+    categories?: String[],
 } 
