@@ -28,11 +28,9 @@ export class ArticleFindByUsernameComponent implements OnInit {
     if(this.username == "") { this.router.navigate(['/articles']) };
     
     this.articleService.findByUsername(this.username).subscribe((answer) => {
-      console.log(answer)
+      this.location.replaceState("/articles/"+this.username);
       this.articles = answer;
     })
-
-    this.location.replaceState("/articles/"+this.username);
   }
 
   cancel():void

@@ -25,6 +25,7 @@ import { ArticleReadComponent } from './components/views/article/article-read/ar
 import {MatTableModule} from '@angular/material/table';
 import { UserFavoriteComponent } from './components/views/user/user-favorite/user-favorite.component';
 import { ArticleFindByUsernameComponent } from './components/views/article/article-find-by-username/article-find-by-username.component';
+import { ArticleGetComponent } from './components/views/article/article-get/article-get.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ArticleFindByUsernameComponent } from './components/views/article/artic
     UserCreateComponent,
     ArticleReadComponent,
     UserFavoriteComponent,
-    ArticleFindByUsernameComponent
+    ArticleFindByUsernameComponent,
+    ArticleGetComponent
   ],
   imports: [
     BrowserModule,

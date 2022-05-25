@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ArticleFindByUsernameComponent } from './components/views/article/article-find-by-username/article-find-by-username.component';
+import { ArticleGetComponent } from './components/views/article/article-get/article-get.component';
 import { ArticleReadComponent } from './components/views/article/article-read/article-read.component';
 import { HomeComponent } from './components/views/home/home.component';
 import { UserCreateComponent } from './components/views/user/user-create/user-create.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'articles/:username',
     component: ArticleFindByUsernameComponent
+  },
+  {
+    path: 'articles/article/:id',
+    component: ArticleGetComponent
   }
 
 ];

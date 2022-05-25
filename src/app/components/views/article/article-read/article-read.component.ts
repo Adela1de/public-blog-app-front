@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { article } from '../article-read-model.model';
 import { ArticleService } from '../article.service';
 
@@ -10,7 +10,7 @@ import { ArticleService } from '../article.service';
 })
 export class ArticleReadComponent implements OnInit {
 
-  displayedColumns: string[] = ['title', 'user', 'categories'];
+  displayedColumns: string[] = ['title', 'user', 'categories', 'actions'];
   
   articles: article[] = []
   username: String = "";
