@@ -53,10 +53,17 @@
     margin-bottom: 2.5rem;
 }
 
-.buttons
+.back
 {
     width: 100%;
     text-align: center;
+}
+
+.post
+{
+    top:35%;
+    left:60%;
+    position: absolute;
 }
 
 button

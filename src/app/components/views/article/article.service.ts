@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { user } from '../user/user.model';
 import { article } from './article-read-model.model';
 import { comment } from './comments.model';
 
@@ -35,6 +36,12 @@ export class ArticleService {
   {
     const url = `${this.baseUrl}articles/by?username=${username}`;
     return this.http.get<article[]>(url);
+  }
+
+  postComment(text: String, user_commented: user, article_commented: article)
+  {
+    const url = `${this.baseUrl}articles/article/${article_commented.id}`
+    return this.http.post<article>(url, {text, user_commented, article_commented});
   }
 
 }

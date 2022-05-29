@@ -17,7 +17,7 @@
         <form class="example-form">
             <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Leave a comment</mat-label>
-            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+            <textarea (keyup.enter)="postComment()" matInput [(ngModel)]="text" name="text" placeholder="Ex. It makes me feel..."></textarea>
             </mat-form-field>
         </form>
     </div>
@@ -40,7 +40,7 @@
         </table>
     </div>
     
-    <div class="buttons">
+    <div class="back">
         <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="basic"> BACK </button>
     </div>
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from '../../user/user.service';
 import { article } from '../article-read-model.model';
 import { ArticleService } from '../article.service';
 import { comment } from '../comments.model';
@@ -14,6 +15,7 @@ export class ArticleGetComponent implements OnInit {
   displayedColumns: string[] = ['comments', 'commentedBy'];
 
   id: string = "";
+  text: String = "";
 
   article: article = 
   {
@@ -25,7 +27,7 @@ export class ArticleGetComponent implements OnInit {
 
   comments: comment[] = []; 
 
-  constructor(private articleService: ArticleService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private articleService: ArticleService, private userService: UserService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id')!;
@@ -52,6 +54,22 @@ export class ArticleGetComponent implements OnInit {
   cancel():void
   {
     this.router.navigate(['articles']);
+  }
+
+  postComment():void
+  {
+    if(!this.userService.checkIfLogged()){ this.userService.message("You have to be logged in order to post a comment! "); }
+    else
+    {
+      this.articleService.postComment(this.text, this.userService.user, this.article).subscribe((answer) => {
+      });
+      this.refresh();
+    }
+  }
+
+  refresh():void
+  {
+    window.location.reload();
   }
 
 }
