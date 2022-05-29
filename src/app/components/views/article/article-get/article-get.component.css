@@ -1,3 +1,5 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
 .content
 {
     width: 90%;
@@ -8,7 +10,7 @@
 {
     text-align: center;
     margin-bottom: 3rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .title h1
@@ -16,6 +18,39 @@
     font-size: 2rem;
     color: black;
     font-weight: 500;
+}
+
+.text
+{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.text h1
+{
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 30;
+}
+
+.table
+{
+    width: 100%;
+    text-align: center;
+
+}
+
+.mat-table
+{
+    width: 100%;
+    
+}
+
+.comments
+{
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2.5rem;
 }
 
 .buttons
@@ -30,4 +65,18 @@ button
     margin-right: .5rem;
     padding-right: 2rem;
     padding-left: 2rem;
+}
+
+.leaveAComment
+{
+    padding-top: 3rem;
+    text-align: left;
+
+}
+
+.leaveAComment h1
+{
+    font-size: 3rem;
+    color: black;
+    font-weight: 1000;
 }

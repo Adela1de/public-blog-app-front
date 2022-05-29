@@ -25,10 +25,10 @@ export class ArticleService {
     return this.http.get<article>(url)
   }
 
-  findCommentsById(id: String):Observable<comment>
+  findCommentsById(id: String):Observable<comment[]>
   {
     const url = `${this.baseUrl}articles/comments/${id}`
-    return this.http.get<comment>(url);
+    return this.http.get<comment[]>(url);
   }
 
   findByUsername(username: String):Observable<article[]>

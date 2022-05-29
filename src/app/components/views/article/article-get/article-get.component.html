@@ -1,8 +1,48 @@
 <div class="content">
+
     <div class="title">
         <h1>{{ article.title }}</h1>
-        
-    <div class="buttons">
-        <button (click)="cancel()"class="mat-elevation-z8" mat-stroked-button color="basic"> BACK </button>
     </div>
+
+    <div class="text">
+        <h1>{{ article.text }}</h1>
+    </div>
+
+    
+    <div class="leaveAComment">
+        <h1>Leave a comment</h1>
+    </div>
+
+    <div class="comments">
+        <form class="example-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Leave a comment</mat-label>
+            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+            </mat-form-field>
+        </form>
+    </div>
+
+    <div class="mat-table content-table">
+        <table class="table" mat-table [dataSource]="comments">
+    
+        <ng-container matColumnDef="commentedBy">
+            <th mat-header-cell *matHeaderCellDef> Commented By </th>
+            <td mat-cell *matCellDef="let element"> {{ element.commentedBy }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="comments">
+            <th class="mat-header" mat-header-cell *matHeaderCellDef> Comments </th>
+            <td mat-cell *matCellDef="let element"> {{ element.comments }} </td>
+        </ng-container>           
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+    
+    <div class="buttons">
+        <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="basic"> BACK </button>
+    </div>
+
+
 </div>

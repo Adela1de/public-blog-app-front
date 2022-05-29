@@ -11,6 +11,8 @@ import { comment } from '../comments.model';
 })
 export class ArticleGetComponent implements OnInit {
 
+  displayedColumns: string[] = ['comments', 'commentedBy'];
+
   id: string = "";
 
   article: article = 
@@ -21,11 +23,7 @@ export class ArticleGetComponent implements OnInit {
     text: ''
   };
 
-  comments: comment = 
-  {
-    comments: [] = [],
-    commentedBy: [] = []
-  }  
+  comments: comment[] = []; 
 
   constructor(private articleService: ArticleService, private router: Router, private route: ActivatedRoute) { }
 
