@@ -1,5 +1,5 @@
 export interface comment
 {
-    comments: String,
+    comment: String,
     commentedBy: String
 } 

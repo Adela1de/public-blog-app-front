@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../../user/user.service';
 import { article } from '../article-read-model.model';
@@ -13,7 +14,6 @@ import { comment } from '../comments.model';
 export class ArticleGetComponent implements OnInit {
 
   displayedColumns: string[] = ['comments', 'commentedBy'];
-
   id: string = "";
   text: String = "";
 
@@ -26,8 +26,13 @@ export class ArticleGetComponent implements OnInit {
   };
 
   comments: comment[] = []; 
+  authService: any;
 
-  constructor(private articleService: ArticleService, private userService: UserService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private articleService: ArticleService, 
+    private userService: UserService, 
+    private router: Router, 
+    private route: ActivatedRoute,
+    private changeDetectorRefs: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id')!;
@@ -62,14 +67,10 @@ export class ArticleGetComponent implements OnInit {
     else
     {
       this.articleService.postComment(this.text, this.userService.user, this.article).subscribe((answer) => {
+        console.log(answer)
+        this.comments = [...this.comments, answer];
       });
-      this.refresh();
     }
-  }
-
-  refresh():void
-  {
-    window.location.reload();
   }
 
 }

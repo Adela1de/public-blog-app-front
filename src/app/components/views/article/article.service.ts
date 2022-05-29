@@ -38,10 +38,10 @@ export class ArticleService {
     return this.http.get<article[]>(url);
   }
 
-  postComment(text: String, user_commented: user, article_commented: article)
+  postComment(text: String, user_commented: user, article_commented: article):Observable<comment>
   {
     const url = `${this.baseUrl}articles/article/${article_commented.id}`
-    return this.http.post<article>(url, {text, user_commented, article_commented});
+    return this.http.post<comment>(url, {text, user_commented, article_commented});
   }
 
 }
