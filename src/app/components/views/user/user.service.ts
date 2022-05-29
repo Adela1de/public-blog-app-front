@@ -50,6 +50,7 @@ export class UserService {
     const url = `${this.baseUrl}users/favorites/${this.user.id}`
     return this.http.get<article[]>(url);
   }
+  
   message(str: string):void
   {
     this._snack.open(`${str}`, "OK", {

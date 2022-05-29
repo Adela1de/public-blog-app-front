@@ -1,0 +1,47 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.content
+{
+    width: 90%;
+    margin: 1.4rem auto auto auto
+}
+
+.title
+{
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
+
+.title h1
+{
+    font-size: 2rem;
+    color: black;
+    font-weight: 500;
+}
+
+.text
+{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.text h1
+{
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 30;
+}
+
+.buttons
+{
+    width: 100%;
+    text-align: center;
+}
+
+button
+{
+    margin-right: .5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}

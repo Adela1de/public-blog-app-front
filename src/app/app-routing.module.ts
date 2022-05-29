@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ArticleFavoriteComponent } from './components/views/article/article-favorite/article-favorite.component';
 import { ArticleFindByUsernameComponent } from './components/views/article/article-find-by-username/article-find-by-username.component';
 import { ArticleGetComponent } from './components/views/article/article-get/article-get.component';
 import { ArticleReadComponent } from './components/views/article/article-read/article-read.component';
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: ':username/:id',
     component: ArticleGetComponent
+  },
+  {
+    path: 'articles/article/favorite/:id',
+    component: ArticleFavoriteComponent
   }
 
 ];

@@ -44,4 +44,10 @@ export class ArticleService {
     return this.http.post<comment>(url, {text, user_commented, article_commented});
   }
 
+  addFavorite(articleId: String, userId: String):Observable<user>
+  {
+    const url = `${this.baseUrl}articles/favorites/${articleId}/${userId}`
+    return this.http.post<user>(url, {});
+  }
+
 }
