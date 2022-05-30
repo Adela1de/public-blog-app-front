@@ -45,9 +45,8 @@ export class ArticleFavoriteComponent implements OnInit {
 
   confirm():void
   {
-    this.articleService.addFavorite(this.article.id!, this.userService.user.id!).subscribe((answer) => {
-      this.router.navigate(['/favorites'])
-    })
+    this.articleService.addFavorite(this.userService.user.id!, this.article.id!);
+    this.router.navigate(['/articles']);
   }
 
 }

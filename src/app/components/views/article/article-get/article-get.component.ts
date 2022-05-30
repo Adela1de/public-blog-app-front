@@ -31,8 +31,7 @@ export class ArticleGetComponent implements OnInit {
   constructor(private articleService: ArticleService, 
     private userService: UserService, 
     private router: Router, 
-    private route: ActivatedRoute,
-    private changeDetectorRefs: ChangeDetectorRef) { }
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id')!;
@@ -43,7 +42,6 @@ export class ArticleGetComponent implements OnInit {
   findById():void
   {
     this.articleService.findById(this.id).subscribe((answer) => {
-      console.log(answer)
       this.article = answer;
     })
   }
@@ -51,7 +49,6 @@ export class ArticleGetComponent implements OnInit {
   findCommentsForArticle():void
   {
     this.articleService.findCommentsById(this.id).subscribe((answer) => {
-      console.log(answer)
       this.comments = answer;
     })
   }
@@ -67,7 +64,6 @@ export class ArticleGetComponent implements OnInit {
     else
     {
       this.articleService.postComment(this.text, this.userService.user, this.article).subscribe((answer) => {
-        console.log(answer)
         this.comments = [...this.comments, answer];
       });
     }

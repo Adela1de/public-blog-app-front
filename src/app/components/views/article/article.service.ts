@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { user } from '../user/user.model';
+import { UserService } from '../user/user.service';
 import { article } from './article-read-model.model';
 import { comment } from './comments.model';
 
@@ -12,7 +13,7 @@ import { comment } from './comments.model';
 export class ArticleService {
 
   baseUrl: String = environment.baseUrl;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private userService: UserService) { }
 
   findAll():Observable<article[]>
   {
@@ -44,10 +45,12 @@ export class ArticleService {
     return this.http.post<comment>(url, {text, user_commented, article_commented});
   }
 
-  addFavorite(articleId: String, userId: String):Observable<user>
+  addFavorite(userId: String, articleId: String):void
   {
-    const url = `${this.baseUrl}articles/favorites/${articleId}/${userId}`
-    return this.http.post<user>(url, {});
+    const url = `${this.baseUrl}articles/favorites/${userId}/${articleId}`
+    this.http.put<user>(url, {}).subscribe((answer) => {
+      this.userService.user = answer;
+    });
   }
 
 }
