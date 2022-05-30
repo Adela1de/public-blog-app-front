@@ -1,0 +1,17 @@
+<form>
+    <h1>Create Your Article</h1>
+    <mat-form-field class="form">
+        <mat-label>Title</mat-label>
+        <input matInput [(ngModel)]="article.title" type="text" name="Title" placeholder="Ex. Little Prince">  
+    </mat-form-field>
+    <form class="form">
+        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Text</mat-label>
+        <textarea matInput [(ngModel)]="article.text" name="text"></textarea>
+        </mat-form-field>
+    </form>
+
+    <div class="buttons">
+        <button (click)="create()"class="mat-elevation-z8" mat-stroked-button color="basic"> CONFIRM </button>
+    </div>
+</form>

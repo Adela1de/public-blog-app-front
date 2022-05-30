@@ -15,6 +15,12 @@ export class ArticleService {
   baseUrl: String = environment.baseUrl;
   constructor(private http: HttpClient, private userService: UserService) { }
 
+  createArticle(userId: String, article: article):void
+  {
+    const url = `${this.baseUrl}articles/${userId}`
+    this.http.post(url, article);
+  }
+
   findAll():Observable<article[]>
   {
     const url = `${this.baseUrl}articles`

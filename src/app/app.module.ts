@@ -27,6 +27,7 @@ import { UserFavoriteComponent } from './components/views/user/user-favorite/use
 import { ArticleFindByUsernameComponent } from './components/views/article/article-find-by-username/article-find-by-username.component';
 import { ArticleGetComponent } from './components/views/article/article-get/article-get.component';
 import { ArticleFavoriteComponent } from './components/views/article/article-favorite/article-favorite.component';
+import { ArticleCreateComponent } from './components/views/article/article-create/article-create.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ArticleFavoriteComponent } from './components/views/article/article-fav
     UserFavoriteComponent,
     ArticleFindByUsernameComponent,
     ArticleGetComponent,
-    ArticleFavoriteComponent
+    ArticleFavoriteComponent,
+    ArticleCreateComponent
   ],
   imports: [
     BrowserModule,

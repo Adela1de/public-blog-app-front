@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ArticleCreateComponent } from './components/views/article/article-create/article-create.component';
 import { ArticleFavoriteComponent } from './components/views/article/article-favorite/article-favorite.component';
 import { ArticleFindByUsernameComponent } from './components/views/article/article-find-by-username/article-find-by-username.component';
 import { ArticleGetComponent } from './components/views/article/article-get/article-get.component';
@@ -45,6 +46,10 @@ const routes: Routes = [
   {
     path: 'articles/article/favorite/:id',
     component: ArticleFavoriteComponent
+  },
+  {
+    path: 'articles/create/new',
+    component: ArticleCreateComponent
   }
 
 ];
